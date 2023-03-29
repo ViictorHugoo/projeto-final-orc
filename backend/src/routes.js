@@ -8,7 +8,6 @@ const UsersController = require('./controllers/UserController');
 // Rota Users - acesso no insonmia ou navegador
 routes.post('/users', UsersController.create);
 routes.get('/users', UsersController.read);
-// id no banco de dados
 routes.delete('/users/:id', UsersController.delete);
 
 //exporta tudo
