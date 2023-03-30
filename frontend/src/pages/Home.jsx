@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
+import Navbar from "../components/Navbar";
 
 import "./MoviesGrid.css";
 
@@ -25,6 +26,8 @@ const Home = () => {
 
   return (
     <div className="container">
+      <Navbar/>
+
       <h2 className="title">Melhores filmes:</h2>
       <div className="movies-container">
         {topMovies.length > 0 &&

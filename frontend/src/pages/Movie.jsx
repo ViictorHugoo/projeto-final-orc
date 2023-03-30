@@ -8,6 +8,7 @@ import {
 } from "react-icons/bs";
 
 import MovieCard from "../components/MovieCard";
+import Navbar from "../components/Navbar";
 
 import "./Movie.css";
 
@@ -39,6 +40,7 @@ const Movie = () => {
 
   return (
     <div className="movie-page">
+      <Navbar/>
       {movie && (
         <>
           <MovieCard movie={movie} showLink={false} />

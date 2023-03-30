@@ -5,6 +5,8 @@ import MovieCard from "../components/MovieCard";
 const searchURL = import.meta.env.VITE_SEARCH;
 const apiKey = import.meta.env.VITE_API_KEY;
 
+import Navbar from "../components/Navbar";
+
 import "./MoviesGrid.css";
 
 const Search = () => {
@@ -26,6 +28,7 @@ const Search = () => {
 
   return (
     <div className="container">
+      <Navbar/>
       <h2 className="title">
         Resultados para: <span className="query-text">{query}</span>
       </h2>

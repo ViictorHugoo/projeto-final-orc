@@ -1,8 +1,11 @@
 //chama o database na constante Users
 const Users = require('../models/UsersData')
 
+
 //exporta tudo
 module.exports = {
+
+    
 
     //find pega todos os dados do database
     //findOne pega apenas um dado do database (não sei usar - victor)
