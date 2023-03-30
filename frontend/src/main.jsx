@@ -6,6 +6,8 @@ import App from './App'
 import Home from './pages/Home';
 import Movie from './pages/Movie';
 import Search from './pages/Search';
+import Signin from './pages/Signin';
+import Signup from './pages/Signup';
 
 import './index.css'
 
@@ -14,7 +16,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route element={<App />}>
-          <Route path="/" element={<Home />}/>
+          <Route path="/" element={<Signin />}/>
+          <Route path="signup" element={<Signup />}/>
+          <Route path="top-rated" element={<Home />}/>
           <Route path="movie/:id" element={<Movie />}/>
           <Route path="search" element={<Search />}/>
         </Route>
