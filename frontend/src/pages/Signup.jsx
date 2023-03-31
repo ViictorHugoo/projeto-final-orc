@@ -18,8 +18,8 @@ const Singin = () => {
     }
     return(
     <form onSubmit={handleSubmit}>
-        <div class="form-email">
-    <label for="email">Email: </label>
+        <div className="form-email">
+    <label>Email: </label>
     
     <input 
       type="email" 
@@ -31,8 +31,8 @@ const Singin = () => {
     />
 
   </div>
-  <div class="form-password">
-    <label for="password">Senha: </label>
+  <div className="form-password">
+    <label>Senha: </label>
     
     <input 
       type="password" 
@@ -44,7 +44,7 @@ const Singin = () => {
     />
  
   </div>
-  <div class="form-example">
+  <div className="form-example">
     <input type="submit" value="Cadastrar"/>
     <Link to="/">Entrar</Link>
   </div>

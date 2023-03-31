@@ -5,8 +5,6 @@ const Users = require('../models/UsersData')
 //exporta tudo
 module.exports = {
 
-    
-
     //find pega todos os dados do database
     //findOne pega apenas um dado do database (não sei usar - victor)
     //cria uma constante que recebe todos os objetos(conjunto de dados - email e password) do database
@@ -19,22 +17,17 @@ module.exports = {
 
     //função para criar novo usuário
     async create(request, response) {
-        const email = request.query
-        const password = request.query
-       
-        const userEmail = await Users.find(email);
-        const userPassword = await Users.find(password);
-        
-        
+        const { email, password } = request.body;
+    
         //se email ou password estiver vazio, retorna erro
-        if(!userEmail || !userPassword) {
+        if(!email || !password) {
             return response.status(400).json({error: "Necessário email e senha"})
         }
 
         //.create é a função do mongoose que cria um objeto com dados no database
         const userCreated = await Users.create({
-            userEmail,
-            userPassword
+            email,
+            password
         });
 
         return response.json(userCreated);

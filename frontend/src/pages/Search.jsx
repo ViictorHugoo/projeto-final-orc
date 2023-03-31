@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
 import MovieCard from "../components/MovieCard";
 
 const searchURL = import.meta.env.VITE_SEARCH;
@@ -13,6 +14,8 @@ const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [movies, setMovies] = useState([]);
+  const [vote, setVote] = useState(0);
+
   const query = searchParams.get("q");
 
   const getSearchedMovies = async (url) => {
@@ -32,9 +35,14 @@ const Search = () => {
       <h2 className="title">
         Resultados para: <span className="query-text">{query}</span>
       </h2>
+      <label>Filtre por avaliação:</label>
+      <input type="number"
+          placeholder=""
+          value={vote} 
+          onChange={(e) => setVote(e.target.value)}
+          />
       <div className="movies-container">
-        {movies &&
-          movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+        {movies && movies.map((movie) => movie.vote_average >= vote ? <MovieCard key={movie.id} movie={movie} /> : '')}
       </div>
     </div>
   );

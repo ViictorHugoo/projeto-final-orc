@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 const Signup = () => {
     return(
         <form>
-            <div class="form-email">
-        <label for="email">Email: </label>
+            <div className="form-email">
+        <label>Email: </label>
         <input type="email" name="email" id="email" required/>
       </div>
-      <div class="form-password">
-        <label for="password">Senha: </label>
+      <div className="form-password">
+        <label>Senha: </label>
         <input type="password" name="password" id="password" required/>
       </div>
-      <div class="form-example">
+      <div className="form-example">
         <input type="submit" value="Entrar"/>
         <Link to="/signup">Cadastrar</Link>
       </div>
